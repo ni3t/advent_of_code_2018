@@ -77,22 +77,22 @@ c = f[1].split("\n")
 c.shift
 
 op_map = {
-  :gtri=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a] > b ? 1 : 0;r } },
-  :gtrr=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a] > r[b] ? 1 : 0;r } },
-  :eqri=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a] = b ? 1 : 0;r } },
-  :eqir=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = a == r[b] ? 1 : 0;r } },
-  :eqrr=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a] == r[b] ? 1 : 0;r } },
-  :gtir=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = a > r[b] ? 1 : 0;r } },
-  :banr=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a] & r[b];r } },
-  :setr=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a];r } },
-  :bani=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a] & b;r } },
-  :seti=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = a;r } },
-  :addr=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a] + r[b];r } },
-  :mulr=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a] * r[b];r } },
-  :muli=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a] * b;r } },
-  :addi=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a] + b;r } },
-  :bori=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a] | b;r } },
-  :borr=>{:idx => nil, fn: ->(a,b,c,r){ r[c] = r[a] | r[b];r} }
+  :gtri=> ->(a,b,c,r){ r[c] = r[a] > b ? 1 : 0;r } },
+  :gtrr=> ->(a,b,c,r){ r[c] = r[a] > r[b] ? 1 : 0;r } },
+  :eqri=> ->(a,b,c,r){ r[c] = r[a] = b ? 1 : 0;r } },
+  :eqir=> ->(a,b,c,r){ r[c] = a == r[b] ? 1 : 0;r } },
+  :eqrr=> ->(a,b,c,r){ r[c] = r[a] == r[b] ? 1 : 0;r } },
+  :gtir=> ->(a,b,c,r){ r[c] = a > r[b] ? 1 : 0;r } },
+  :banr=> ->(a,b,c,r){ r[c] = r[a] & r[b];r } },
+  :setr=> ->(a,b,c,r){ r[c] = r[a];r } },
+  :bani=> ->(a,b,c,r){ r[c] = r[a] & b;r } },
+  :seti=> ->(a,b,c,r){ r[c] = a;r } },
+  :addr=> ->(a,b,c,r){ r[c] = r[a] + r[b];r } },
+  :mulr=> ->(a,b,c,r){ r[c] = r[a] * r[b];r } },
+  :muli=> ->(a,b,c,r){ r[c] = r[a] * b;r } },
+  :addi=> ->(a,b,c,r){ r[c] = r[a] + b;r } },
+  :bori=> ->(a,b,c,r){ r[c] = r[a] | b;r } },
+  :borr=> ->(a,b,c,r){ r[c] = r[a] | r[b];r} }
 }
 
 
